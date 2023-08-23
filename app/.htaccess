@@ -1,0 +1,19 @@
+Options - Indexes
+
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^page/([0-9]+)/?$ index.php?page=$1 [QSA,L]
+# RewriteRule ^filter/([^/]+)/?$ index.php?filter=$1 [QSA,L]
+# RewriteRule ^sort/([^/]+)/([^/]+)/?$ index.php?sort=$1&order=$2 [QSA,L]
+
+
+RewriteEngine On
+
+# Rewrite pagination URLs
+RewriteRule ^page/(\d+)/?$ index.php?page=$1 [QSA,L]
+
+# Rewrite filtering URLs
+RewriteRule ^filter/([^/]+)/?$ index.php?filter=$1 [QSA,L]
+
+# Rewrite sorting URLs
+RewriteRule ^sort/([^/]+)/([^/]+)/?$ index.php?sort=$1&order=$2 [QSA,L]
